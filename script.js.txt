@@ -1,0 +1,61 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const images = [
+        '1 Secrets of Ceylon Brochure Cover.png',
+        '2 Intro & Contents.png',
+        '3 Horathapola Estate.png',
+        '4 Peacock Hill.png',
+        '5 Floating Mountain Villa.png',
+        '6 Ferncliff Bungalow.png',
+        '7 Idal Villa.png',
+        '8 Hapu Tales.png',
+        '9 Wild Culture.png',
+        '10 Kulu Safaris.png',
+        '11 Kudakalliya Beach Houses.png',
+        '12 3 Sisters.png',
+        '13 Zylan.png',
+        '14 Forgotten Colombo on a Landy.png',
+        '15 Last Page.png'
+    ];
+
+    const pageContainer = document.getElementById('page-container');
+    let currentPage = 0;
+
+    // Create pages
+    images.forEach((image) => {
+        const page = document.createElement('div');
+        page.className = 'page';
+        page.style.backgroundImage = `url(${image})`;
+        pageContainer.appendChild(page);
+    });
+
+    const totalPages = images.length;
+
+    // Navigation logic
+    document.getElementById('next').addEventListener('click', () => {
+        if (currentPage < totalPages - 1) {
+            currentPage++;
+            updateBook();
+        }
+    });
+
+    document.getElementById('prev').addEventListener('click', () => {
+        if (currentPage > 0) {
+            currentPage--;
+            updateBook();
+        }
+    });
+
+    function updateBook() {
+        const angle = -currentPage * 180;
+        pageContainer.style.transform = `rotateY(${angle}deg)`;
+    }
+
+    // Arrow key navigation
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowRight') {
+            document.getElementById('next').click();
+        } else if (event.key === 'ArrowLeft') {
+            document.getElementById('prev').click();
+        }
+    });
+});
