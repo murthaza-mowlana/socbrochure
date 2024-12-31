@@ -1,21 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const images = [
-        '1 Secrets of Ceylon Brochure Cover.png',
-        '2 Intro & Contents.png',
-        '3 Horathapola Estate.png',
-        '4 Peacock Hill.png',
-        '5 Floating Mountain Villa.png',
-        '6 Ferncliff Bungalow.png',
-        '7 Idal Villa.png',
-        '8 Hapu Tales.png',
-        '9 Wild Culture.png',
-        '10 Kulu Safaris.png',
-        '11 Kudakalliya Beach Houses.png',
-        '12 3 Sisters.png',
-        '13 Zylan.png',
-        '14 Forgotten Colombo on a Landy.png',
-        '15 Last Page.png'
-    ];
+const images = [
+    'images/1 Secrets of Ceylon Brochure Cover.png',
+    'images/2 Intro & Contents.png',
+    'images/3 Horathapola Estate.png',
+    'images/4 Peacock Hill.png',
+    'images/5 Floating Mountain Villa.png',
+    'images/6 Ferncliff Bungalow.png',
+    'images/7 Idal Villa.png',
+    'images/8 Hapu Tales.png',
+    'images/9 Wild Culture.png',
+    'images/10 Kulu Safaris.png',
+    'images/11 Kudakalliya Beach Houses.png',
+    'images/12 3 Sisters.png',
+    'images/13 Zylan.png',
+    'images/14 Forgotten Colombo on a Landy.png',
+    'images/15 Last Page.png'
+];
 
     const pageContainer = document.getElementById('page-container');
     let currentPage = 0;
