@@ -1,34 +1,39 @@
 document.addEventListener('DOMContentLoaded', () => {
-const Images = [
-    'Images/1 Secrets of Ceylon Brochure Cover.png',
-    'Images/2 Intro & Contents.png',
-    'Images/3 Horathapola Estate.png',
-    'Images/4 Peacock Hill.png',
-    'Images/5 Floating Mountain Villa.png',
-    'Images/6 Ferncliff Bungalow.png',
-    'Images/7 Idal Villa.png',
-    'Images/8 Hapu Tales.png',
-    'Images/9 Wild Culture.png',
-    'Images/10 Kulu Safaris.png',
-    'Images/11 Kudakalliya Beach Houses.png',
-    'Images/12 3 Sisters.png',
-    'Images/13 Zylan.png',
-    'Images/14 Forgotten Colombo on a Landy.png',
-    'Images/15 Last Page.png'
-];
+    const Images = [
+        'Images/1 Secrets of Ceylon Brochure Cover.png',
+        'Images/2 Intro & Contents.png',
+        'Images/3 Horathapola Estate.png',
+        'Images/4 Peacock Hill.png',
+        'Images/5 Floating Mountain Villa.png',
+        'Images/6 Ferncliff Bungalow.png',
+        'Images/7 Idal Villa.png',
+        'Images/8 Hapu Tales.png',
+        'Images/9 Wild Culture.png',
+        'Images/10 Kulu Safaris.png',
+        'Images/11 Kudakalliya Beach Houses.png',
+        'Images/12 3 Sisters.png',
+        'Images/13 Zylan.png',
+        'Images/14 Forgotten Colombo on a Landy.png',
+        'Images/15 Last Page.png'
+    ];
 
     const pageContainer = document.getElementById('page-container');
     let currentPage = 0;
 
-    // Create pages
-    Images.forEach((image) => {
+    // Create pages dynamically
+    Images.forEach((image, index) => {
         const page = document.createElement('div');
         page.className = 'page';
         page.style.backgroundImage = `url(${image})`;
+
+        // Apply rotation for odd/even pages
+        if (index % 2 === 1) {
+            page.style.transform = `rotateY(180deg)`;
+        }
         pageContainer.appendChild(page);
     });
 
-    const totalPages = images.length;
+    const totalPages = Images.length;
 
     // Navigation logic
     document.getElementById('next').addEventListener('click', () => {
