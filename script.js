@@ -21,7 +21,7 @@ const Images = [
     let currentPage = 0;
 
     // Create pages
-    images.forEach((image) => {
+    Images.forEach((image) => {
         const page = document.createElement('div');
         page.className = 'page';
         page.style.backgroundImage = `url(${image})`;
